@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+*.log
+
+# Secrets and local desk state belong outside a clone; this is only a backstop.
+.env
+.env.*
+!.env.example
+trading-desk/
+*.sqlite
+*.sqlite3

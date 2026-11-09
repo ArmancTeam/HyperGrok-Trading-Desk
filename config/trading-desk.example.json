@@ -1,0 +1,77 @@
+{
+  "project": "HyperGrok Trading Desk",
+  "configuration_status": "reference_only_not_runtime_wiring",
+  "exchanges": {
+    "hyperliquid": {
+      "enabled": true,
+      "market_type": "perpetual",
+      "access": "public_read_only"
+    },
+    "mexc": {
+      "enabled": true,
+      "market_type": "spot",
+      "access": "public_read_only"
+    },
+    "binance": {
+      "enabled": false
+    }
+  },
+  "trading": {
+    "mode": "paper_and_shadow_only",
+    "real_orders_enabled": false,
+    "wallet_keys_required": false,
+    "paper_equity_usdt": 10000,
+    "risk_per_trade_usdt": 50,
+    "daily_loss_limit_usdt": 100,
+    "aggregate_open_risk_limit_usdt": 150,
+    "minimum_reward_risk": 2,
+    "max_consecutive_losses": 3,
+    "live_trading_enabled": false,
+    "live_order_execution": false,
+    "automatic_live_orders_enabled": false,
+    "mexc_initial_capital_usdt": null
+  },
+  "risk_guardian": {
+    "max_risk_per_trade_percent": 0.5,
+    "max_daily_loss_percent": 1.0,
+    "max_aggregate_open_risk_percent": 1.5,
+    "minimum_reward_risk": 2,
+    "pause_after_consecutive_losses": 3
+  },
+  "daily_report": {
+    "requested": true,
+    "local_time": "08:00",
+    "timezone": "Europe/Istanbul",
+    "weekly_report": false,
+    "note": "Runtime schedule must be verified in Grok.",
+    "runtime_schedule_verified": false
+  },
+  "data_quality": {
+    "max_age_seconds": {
+      "realtime_quotes": 30,
+      "candles": 300
+    },
+    "reject_missing_source": true,
+    "reject_missing_timestamp": true,
+    "reject_spot_perpetual_mismatch": true,
+    "quarantine_invalid_records": true,
+    "fail_closed_for_signals_and_paper_trading": true
+  },
+  "shadow_observation": {
+    "requested_duration_hours": 24,
+    "status": "user_reported_pass_not_independently_verified",
+    "persistent_runtime_logs_verified": false
+  },
+  "shadow_validation": {
+    "reported_completed_trade_count": 100,
+    "target_trade_count": 100,
+    "performance_audit": "user_reported_pass_not_independently_verified",
+    "independent_record_audit": "user_reported_pass_not_independently_verified",
+    "raw_trade_ledger_included": false
+  },
+  "backup": {
+    "baseline_prompt_reported_complete": true,
+    "backup_artifact_included": false,
+    "restore_test_verified": false
+  }
+}
