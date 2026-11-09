@@ -36,6 +36,15 @@ class MexcSpotTests(unittest.TestCase):
         self.assertEqual(mocked.call_count, 3)
 
     @patch("mexc_spot.public_get")
+    def test_accepts_negative_24h_change(self, mocked):
+        negative_ticker = dict(TICKER, priceChangePercent="-0.0035")
+        mocked.side_effect = [negative_ticker, BOOK, DEPTH]
+
+        result = run_snapshot()
+
+        self.assertEqual(result["change_percent_24h"], "-0.0035")
+
+    @patch("mexc_spot.public_get")
     def test_rejects_crossed_book(self, mocked):
         crossed = dict(BOOK, bidPrice="75002", askPrice="75001")
         mocked.side_effect = [TICKER, crossed, DEPTH]

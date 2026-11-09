@@ -26,6 +26,18 @@ def number(value, field):
     return result
 
 
+def signed_number(value, field):
+    try:
+        result = Decimal(str(value))
+    except (InvalidOperation, ValueError, TypeError):
+        raise MexcPublicError(f"invalid numeric field: {field}")
+
+    if not result.is_finite():
+        raise MexcPublicError(f"invalid numeric field: {field}")
+
+    return result
+
+
 def positive(value, field):
     result = number(value, field)
     if result <= 0:
@@ -107,7 +119,7 @@ def run_snapshot(symbol="BTCUSDT", depth_limit=20, timeout=10):
         "bid_quantity": str(number(book.get("bidQty"), "bidQty")),
         "ask_quantity": str(number(book.get("askQty"), "askQty")),
         "spread_bps": str(spread_bps),
-        "change_percent_24h": str(number(ticker.get("priceChangePercent"), "priceChangePercent")),
+        "change_percent_24h": str(signed_number(ticker.get("priceChangePercent"), "priceChangePercent")),
         "base_volume_24h": str(number(ticker.get("volume"), "volume")),
         "quote_volume_24h": str(number(ticker.get("quoteVolume"), "quoteVolume")),
         "high_24h": str(positive(ticker.get("highPrice"), "highPrice")),

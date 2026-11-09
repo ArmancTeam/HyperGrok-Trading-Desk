@@ -19,18 +19,12 @@ HyperGrok gives your AI agents a shared process for Hyperliquid research, risk, 
 ## Try it now, no keys
 
 ```bash
-git clone --depth 1 --branch v1.7.1 https://github.com/galleonlabs/hypergrok-trading-desk.git
-cd hypergrok-trading-desk
-python3 scripts/opening_bell.py --coin ETH
+git clone --depth 1 --branch main https://github.com/ArmancTeam/HyperGrok-Trading-Desk.git
+cd HyperGrok-Trading-Desk
+python3 scripts/mexc_spot.py --symbol ETHUSDT
 ```
 
-A live ETH snapshot from Hyperliquid's public `/info` endpoint: price, funding, open interest, spread and depth. It needs no wallet, account or key, and runs on Python 3's standard library.
-
-<p align="center">
-  <img src="assets/opening-bell.gif" width="800" alt="Recorded output of python3 scripts/opening_bell.py --coin ETH showing a sourced market snapshot with prices, funding and book depth.">
-</p>
-
-Recorded from the command above on 25 October 2026 at 13:09 UTC. The figures are a historical snapshot; run it yourself for current data.
+A live ETHUSDT snapshot from MEXC Spot public market data: last price, best bid and ask, spread, 24-hour statistics and order-book depth. No wallet, account access or API key is required.
 
 ## Start
 
