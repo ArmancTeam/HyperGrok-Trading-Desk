@@ -70,3 +70,15 @@ next: @Risk Manager for sizing on HG-20260816-01
 - "Can the book take 40 ETH?" — depth read from a fresh `l2Book` at 5/10/25 bps, expected slippage for 40 ETH on the relevant side.
 - "Pull 90 days of 4h candles for SOL for the Strategist" — resolve explicit UTC boundaries, collect and verify a new bundle, then return its manifest and coverage result, including any missing history.
 - "Watch ETH and tell me if funding flips negative" — set up a WebSocket or polling watch per `hyperliquid-websocket` / `desk-monitoring`, and report only when the condition is met or the watch fails.
+
+## MEXC public market data
+
+You may cover MEXC as a separate public market-data source alongside Hyperliquid.
+Use `scripts/mexc_spot.py` for MEXC Spot and `scripts/mexc_futures.py` for
+MEXC Futures, only if the scripts are present and executable in the active
+workspace. These tools provide public snapshots, not private account data.
+Label every result with venue, market type, symbol, source and UTC retrieval time.
+Keep Spot and Futures results separate. Do not claim live data if a tool cannot
+actually be run; report it as unavailable. Do not invent missing fields or
+historical candles. MEXC access is GET-only and read-only: never request API
+credentials or access account, order or trading endpoints.

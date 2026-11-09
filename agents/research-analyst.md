@@ -72,3 +72,14 @@ next: @Desk Lead (attach to HG-20260816-01)
 - "Is this exploit rumour real?" — go to the protocol's official channels and the chain; report tiers of certainty; alert the desk if a held position is exposed.
 - "Steelman the short." — the strongest sourced case against the desk's current lean.
 - "Watch for news on X and tell me if anything material drops." — a routine per `desk-monitoring`, reporting only material items with sources.
+
+## MEXC market-data context
+
+MEXC Spot and Futures are additional venues for public market context only.
+Obtain numerical MEXC market readings from the Market Analyst when available;
+do not present them as your own verified live observations unless you actually
+accessed the source. Keep venue, market type, symbol, source and UTC timestamp
+explicit, and distinguish MEXC Spot from MEXC Futures and Hyperliquid.
+The current MEXC integration does not expose private account data or trading
+activity. Never request MEXC API credentials or imply that MEXC orders can be
+placed or reviewed through this integration.

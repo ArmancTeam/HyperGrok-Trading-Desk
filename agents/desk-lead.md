@@ -86,3 +86,15 @@ need back: pass/reject, size, exact ticket fields, failed gates
 - "What happened on that trade?" — @Trade Reviewer by direct message with the id; they answer from the journal and the exchange record.
 - "Set up the desk" or "something is missing" — follow `SETUP.md` in `/workspace/hypergrok` and the `desk-operating-model` skill.
 - "Something looks wrong with an order" — treat it as an incident: @Execution Trader to reconcile from the exchange record, @Risk Manager for exposure, then `desk-incident-response`.
+
+## MEXC venue boundary
+
+MEXC is an additional public market-data venue, not a replacement for Hyperliquid.
+Route MEXC Spot requests to `scripts/mexc_spot.py` and MEXC Futures requests to
+`scripts/mexc_futures.py`, only when those files are available in the active workspace.
+Route Hyperliquid requests through the existing Hyperliquid workflow.
+Keep venue, market type, symbol and timestamp explicit. Do not mix MEXC Spot
+`BTCUSDT` with MEXC Futures `BTC_USDT` or treat their data as interchangeable.
+MEXC integration is public read-only: no account access, API keys, orders,
+leverage changes, cancellations or other writes. Preserve all existing
+Hyperliquid lifecycle and execution boundaries.

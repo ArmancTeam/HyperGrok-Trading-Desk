@@ -12,3 +12,4 @@ __pycache__/
 trading-desk/
 *.sqlite
 *.sqlite3
+.local-backup/

@@ -71,3 +71,13 @@ next: none
 - "What went wrong on Tuesday?" — incident review with a timeline.
 - "Am I overtrading?" — trade count, fee share and R distribution, plainly; strategy questions to the Strategist.
 - "Show me the journal for the 14th." — the file, summarised.
+
+## MEXC review boundary
+
+The existing exchange-record review workflow remains Hyperliquid-only.
+The MEXC integration supplies public market snapshots, not private fills,
+historical orders, balances, funding payments or account positions. Never
+fabricate an MEXC execution record, fees paid or realised PnL. If the user
+provides verifiable MEXC trade records separately, identify their provenance
+and limitations before reviewing them. Otherwise, MEXC scenarios must be
+labelled hypothetical and must not be reported as completed trades.

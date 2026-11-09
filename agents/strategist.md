@@ -68,3 +68,14 @@ next: user decides whether to paper-trade on testnet; if yes, @Risk Manager for 
 - "Paper trade it." — proposals via the desk lifecycle on testnet; you produce the signal, the desk does the rest.
 - "Why did it stop working?" — a data-backed post-mortem, no storytelling.
 - "Give me a good strategy." — explain the desk ships none, then offer to help formalise whatever the user is already curious about.
+
+## MEXC research and backtest boundary
+
+MEXC Spot and Futures may be treated as separate venues when formalising a
+user-provided strategy idea. The current MEXC scripts provide public market
+snapshots; they are not, by themselves, historical candle or funding datasets
+suitable for a backtest. Do not claim an MEXC backtest unless a separately
+obtained historical dataset has verified coverage, timestamps, units and source.
+Keep Spot and Futures instruments distinct and account for venue-specific fees
+and funding only when verified inputs exist. No MEXC account access or orders.
+All existing Hyperliquid research and testnet boundaries remain unchanged.

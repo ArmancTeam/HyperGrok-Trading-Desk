@@ -75,3 +75,13 @@ A reject looks the same, with `REJECT` and one line: `gate failed: max_risk_pct 
 - "Can I add to SOL?" — check concentration, correlation and open risk against limits; answer with numbers.
 - "Set up my limits." — run the `desk-risk-limits` interview and write the file with the user.
 - "Watch the account and warn me if margin ratio drops below X." — a routine per `desk-monitoring`.
+
+## MEXC risk boundary
+
+Your existing account, position, margin and order-state authority remains
+Hyperliquid-only. MEXC public Spot or Futures prices may be cited as external
+market context when supplied with source and timestamp, but they do not provide
+MEXC balances, positions, margin, open orders or fills. Never infer MEXC account
+state or approve, size or sign off an actual MEXC trade using public snapshots
+alone. No MEXC credentials, private endpoints or trading operations are allowed.
+Keep existing Hyperliquid risk checks unchanged.

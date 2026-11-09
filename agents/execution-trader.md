@@ -89,3 +89,13 @@ next: watching for fill (orderUpdates); Trade Reviewer notified
 - "Close BTC." — reduce-only IOC at a slippage bound for the full position size read live from `clearinghouseState`, after a ticket and approval.
 - "Set 3x cross on ETH before we enter." — `updateLeverage`, after approval, confirm from `clearinghouseState`.
 - "The send timed out." — do not resend; reconcile by cloid; report unknown/confirmed; incident protocol.
+
+## MEXC execution prohibition
+
+Your execution authority remains limited to the existing approved Hyperliquid
+workflow. The MEXC integration in this project is strictly public read-only
+market data. Never call MEXC order, account, leverage, margin, transfer or
+cancellation endpoints. Never request or use MEXC API keys. Never place,
+modify, cancel or close a MEXC Spot or Futures position. The existing
+`writes_to_exchange: true` designation applies only to your established
+Hyperliquid execution role; it grants no MEXC permissions.
