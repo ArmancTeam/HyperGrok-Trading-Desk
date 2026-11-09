@@ -257,6 +257,8 @@ class ReleaseBumpTest(unittest.TestCase):
     def test_paths_refuse_before_any_mutation(self):
         for variant in ("manifest-symlink", "markdown-symlink", "directory-symlink",
                         "check-symlink", "manifest-hardlink", "absolute-hash", "traversal-hash"):
+            if variant == "manifest-hardlink" and not hasattr(os, "link"):
+                continue
             with self.subTest(variant):
                 root = self.case_named(variant)
                 outside = os.path.join(self.temp.name, variant + "-outside")
@@ -286,8 +288,9 @@ class ReleaseBumpTest(unittest.TestCase):
     def test_git_checkout_with_contained_symlink(self):
         root = self.safe_case()
         link = os.path.join(root, "CLAUDE.md")
-        if not os.path.islink(link):
-            os.symlink("AGENTS.md", link)
+        if os.path.lexists(link):
+            os.unlink(link)
+        os.symlink("AGENTS.md", link)
         git = ["git", "-C", root, "-c", "user.name=t", "-c", "user.email=t@t", "-c", "commit.gpgsign=false"]
         for args in (["init", "-q"], ["add", "-A"], ["commit", "-q", "-m", "x"]):
             subprocess.run([*git, *args], check=True, capture_output=True)
