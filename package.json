@@ -1,7 +1,7 @@
 {
   "name": "hypergrok-trading-desk",
   "version": "1.7.1",
-  "description": "HyperGrok instructions, seventeen skills, seven role profiles and read-only Python tools for a user-approved Hyperliquid trading desk.",
+  "description": "HyperGrok trading desk resources with Hyperliquid support and read-only MEXC Spot and Futures market-data tools.",
   "license": "MIT",
   "author": {
     "name": "Galleon Labs",
@@ -153,7 +153,13 @@
     "skills/hyperliquid-websocket/ATTRIBUTION.md",
     "skills/hyperliquid-websocket/LICENSE",
     "skills/hyperliquid-websocket/SKILL.md",
-    "template/grok-bot.json"
+    "template/grok-bot.json",
+    "scripts/mexc_common.py",
+    "scripts/mexc_spot.py",
+    "scripts/mexc_futures.py",
+    "scripts/test_mexc_common.py",
+    "scripts/test_mexc_spot.py",
+    "scripts/test_mexc_futures.py"
   ],
   "scripts": {
     "test": "bash scripts/check.sh",
