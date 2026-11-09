@@ -124,6 +124,9 @@ python3 scripts/test_release_bump.py
 python3 scripts/test_check_public_template.py
 python3 scripts/test_stop_cost.py
 python3 scripts/test_exchange_write_gate.py
+python3 scripts/test_mexc_common.py
+python3 scripts/test_mexc_spot.py
+python3 scripts/test_mexc_futures.py
 
 # Verify the published arithmetic without loading a wallet or SDK.
 python3 scripts/test_order_rounding.py
