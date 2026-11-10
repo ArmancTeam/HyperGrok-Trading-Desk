@@ -48,7 +48,9 @@ SCRIPTS = (
     "test_release_bump.py",
     "test_stop_cost.py",
     "mexc_common.py", "mexc_spot.py", "mexc_futures.py",
+    "mexc_auth.py", "mexc_account.py",
     "test_mexc_common.py", "test_mexc_spot.py", "test_mexc_futures.py",
+    "test_mexc_auth.py", "test_mexc_account.py",
 )
 SAFE_SCRIPTS = {"test": "bash scripts/check.sh", "prepack": "bash scripts/check.sh"}
 NO_RUNTIME_FIELDS = (

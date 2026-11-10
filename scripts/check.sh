@@ -127,6 +127,8 @@ python3 scripts/test_exchange_write_gate.py
 python3 scripts/test_mexc_common.py
 python3 scripts/test_mexc_spot.py
 python3 scripts/test_mexc_futures.py
+python3 scripts/test_mexc_auth.py
+python3 scripts/test_mexc_account.py
 
 # Verify the published arithmetic without loading a wallet or SDK.
 python3 scripts/test_order_rounding.py

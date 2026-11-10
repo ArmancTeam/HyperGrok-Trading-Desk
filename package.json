@@ -154,9 +154,13 @@
     "skills/hyperliquid-websocket/LICENSE",
     "skills/hyperliquid-websocket/SKILL.md",
     "template/grok-bot.json",
+    "scripts/mexc_account.py",
+    "scripts/mexc_auth.py",
     "scripts/mexc_common.py",
     "scripts/mexc_spot.py",
     "scripts/mexc_futures.py",
+    "scripts/test_mexc_account.py",
+    "scripts/test_mexc_auth.py",
     "scripts/test_mexc_common.py",
     "scripts/test_mexc_spot.py",
     "scripts/test_mexc_futures.py"
